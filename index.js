@@ -18,6 +18,7 @@ const secret = 'dfdsfioio545sfd56';
 
 const app = express();
 const port = process.env.API_PORT;
+const dbUrl = process.env.DB_URL;
 
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
@@ -27,7 +28,7 @@ app.use('/uploads', express.static('uploads'));
 
 
 
-mongoose.connect('mongodb+srv://blog:HqFgMd3FBt6skyYa@cluster0.zwxlqvo.mongodb.net/');
+mongoose.connect(dbUrl);
 
 
 mongoose.connection.on('error', (err) => {
