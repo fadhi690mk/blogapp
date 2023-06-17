@@ -23,7 +23,7 @@ const dbUrl = process.env.DB_URL;
 const REACT_APP_URL = process.env.REACT_APP_URL;
 
 app.use(cors({
-  origin: REACT_APP_URL,
+  origin: 'https://relaxed-taffy-3d19bd.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: 'Content-Type',
   credentials: true 
