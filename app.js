@@ -21,7 +21,12 @@ const port = process.env.API_PORT || 4000;
 const dbUrl = process.env.DB_URL;
 const REACT_APP_URL = process.env.REACT_APP_URL;
 
-app.use(cors({credentials:true,origin:REACT_APP_URL}));
+app.use(cors({
+  origin: REACT_APP_URL,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: 'Content-Type',
+  credentials: true 
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
