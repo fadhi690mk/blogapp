@@ -10,6 +10,7 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' }); 
 const fs = require('fs');
 const dotenv = require('dotenv');
+const fetch = require('node-fetch');
 
 dotenv.config();
 
